@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Zen+Kurenaido&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>とどりすと</title>
+</head>
+
+<body>
+    <header>
+        <h1>とどりすと</h1>
+        <div class="filterArea">
+            <div class="headerBox">
+                <h2>タスク</h2>
+                <p class="explanation">フィルターを選択すると絞り込みができます。<br>
+                    日付指定は両方を入力するとフィルターがかかります。<br>
+                    カテゴリは右クリックで削除できます。</p>
+            </div>
+            <div class="filterBox">
+                <ul class="priority">
+                    <li class="element">すべて</li>
+                    <li class="element">優先度なし</li>
+                    <li class="element">🔴高</li>
+                    <li class="element">🟡中</li>
+                    <li class="element">🟢低</li>
+                </ul>
+                <div class="search">
+                    <input type="text" id="searchBox" placeholder="　タスクを検索...">
+                    <button id="searchClear">×</button>
+                    <button id="searchButton">検索</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="palette">
+        <aside class="sortArea">
+            <h3>-リミット-</h3>
+            <ul class="sortBox limit">
+                <li class="element">すべて</li>
+                <li class="element">今日</li>
+                <li class="element">日付指定
+                    <span class="inputLimit">
+                        <input type="date" class="calendar">
+                        <span class="tilde">～</span>
+                        <input type="date" class="calendar">
+                    </span>
+                </li>
+                <li class="element">期限なし</li>
+                <li class="element">期限切れ</li>
+                <li class="element">完了</li>
+            </ul>
+
+            <h3>-カテゴリ-</h3>
+            <ul class="sortBox category">
+                <li class="element">すべて</li>
+                <li class="element">仕事</li>
+                <li class="element">プライベート</li>
+                <li class="element">買い物</li>
+            </ul>
+
+            <button id="defineCategory">＋カテゴリを追加</button>
+        </aside>
+
+        <!-- TODOの入力エリア -->
+        <main>
+            <section class="todoform">
+                <div class="container">
+                    <form id="inputArea">
+                        <input type="text" id="inputBox" placeholder="　新しいタスク（ヨーグルト）を追加..." autocomplete="off">
+                    </form>
+                    <div class="keyword">
+                        <select name="selectPriority" id="selectP" class="choice">
+                            <option value="undefined">--優先度なし--</option>
+                            <option value="high">🔴高</option>
+                            <option value="middle">🟡中</option>
+                            <option value="low">🟢低</option>
+                        </select>
+
+                        <label>期限：<input type="date" id="inputDue" class="choice"></label>
+
+                        <select name="selectCategory" id="selectC" class="choice">
+                            <option value="notSelected">--カテゴリなし--</option>
+                            <option value="work">仕事</option>
+                            <option value="private">プライベート</option>
+                            <option value="shopping">買い物</option>
+                        </select>
+
+                        <input type="text" id="inputTag" class="choice" placeholder="　タグを追加（カンマ区切り）">
+                        <button id="addTodo" class="button">＋追加</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 登録したTODOの表示エリア -->
+            <section class="todoArea">
+                <div class="container">
+                    <div id="empty">
+                        <div class="emptyIcon">🌸</div>
+                        <p>ヨーグルト（タスク）がないよ</p>
+                    </div>
+                </div>
+                <ul class="listArea" id="entered"></ul>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 smhr_t all rights reserved.</p>
+    </footer>
+    <script src="./script/script.js"></script>
+</body>
+
+</html>

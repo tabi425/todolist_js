@@ -1,0 +1,354 @@
+@charset "utf-8";
+
+:root {
+    --font: #2C3E50;
+    --white: #FEFEFE;
+    --pink: #F4A5A5;
+    --purple: #D9D6E2;
+    --deepPurple: #BFAEF3;
+    --gray: #6c757d;
+}
+
+/* 全体 */
+body {
+    font-family: "Hachi Maru Pop", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--font);
+    background-color: var(--purple);
+}
+
+/* ヘッダー */
+header {
+    display: flex;
+}
+
+h1 {
+    font-size: 24px;
+    padding: 16px 24px;
+    color: var(--white);
+    background-color: var(--pink);
+    width: 160px;
+    white-space: nowrap;
+}
+
+
+/* フィルターエリア */
+.filterArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    flex: 1;
+}
+
+.headerBox h2 {
+    font-size: 24px;
+    margin: 0 16px;
+}
+
+.headerBox {
+    display: flex;
+}
+
+.explanation {
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.filterBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priority li {
+    font-size: 16px;
+    padding: 8px;
+}
+
+.priority .element:hover {
+    cursor: pointer;
+    background-color: var(--purple);
+    transition: .3s;
+    border-radius: 16px;
+}
+
+/* ソートエリア */
+.search {
+    margin: 0 16px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+#searchBox {
+    border: 1px solid var(--font);
+    border-radius: 16px;
+    padding: 8px;
+    padding-right: 16px;
+}
+
+#searchClear {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 80px;
+    background: transparent;
+    border: none;
+    color: var(--font);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#searchClear:hover {
+    opacity: 0.6;
+}
+
+#searchButton {
+    background-color: var(--purple);
+    border: 1px solid var(--font);
+    border-radius: 8px;
+    margin: 0 8px;
+    padding: 4px 8px;
+}
+
+
+.priority {
+    display: flex;
+    gap: 8px;
+}
+
+h3 {
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.sortArea {
+    width: 160px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 8px 16px;
+    min-height: 100vh;
+}
+
+.sortBox {
+    margin-bottom: 8px;
+}
+
+.sortBox li {
+    padding: 4px 0;
+}
+
+.inputLimit {
+    /* 直前の「日付指定」項目とカレンダーの間に余白を持たせるため */
+    padding-top: 4px;
+    display: block;
+    text-align: center;
+}
+
+.limit {
+    padding-bottom: 24px;
+    border-bottom: 1px dotted var(--font);
+}
+
+.sortBox .element:hover {
+    cursor: pointer;
+    background-color: var(--purple);
+    transition: .5s;
+    border-radius: 0 32px 32px 0;
+    padding: 4px;
+}
+
+
+#defineCategory {
+    border: 1px dotted var(--font);
+    border-radius: 16px;
+    white-space: nowrap;
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+.calendar {
+    font-size: 12px;
+    border: 1px solid var(--font);
+    border-radius: 4px;
+    margin: 4px 0;
+}
+
+.tilde {
+    transform: rotate(90deg);
+    display: inline-block;
+}
+
+.palette {
+    display: flex;
+}
+
+/* todoエリア */
+main {
+    flex: 1;
+}
+
+.keyword {
+    display: flex;
+    gap: 8px;
+}
+
+.todoform,
+.contents {
+    background-color: var(--white);
+    max-width: 80%;
+    margin: 16px auto;
+    padding: 16px 32px;
+    border-radius: 16px;
+}
+
+#inputArea,
+.addText {
+    margin-bottom: 8px;
+}
+
+.choice {
+    border: 1px solid var(--font);
+    background-color: var(--purple);
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+}
+
+.choice,
+#addTodo {
+    height: 32px;
+}
+
+.selectP,
+.celectC {
+    text-align: center;
+}
+
+#inputBox {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 8px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--font);
+    background-color: var(--purple);
+    border: 1px solid #e2d6dd;
+    appearance: none;
+    border-radius: 12px;
+}
+
+#inputBox:focus {
+    color: var(--font);
+    background-color: var(--white);
+    border-color: #F4A5A5;
+    outline: 0;
+    box-shadow: 0 0 0 4px #e2d6dd;
+}
+
+.button {
+    background-color: var(--deepPurple);
+    color: var(--white);
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 4px 16px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+
+/* 追加したdomだけに適用する装飾 */
+.task {
+    display: flex;
+    gap: 8px;
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.details {
+    border: none;
+    font-size: 12px;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+}
+
+.editArea {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+
+/* タスクが無いときの表示 */
+#empty {
+    text-align: center;
+}
+
+.emptyIcon {
+    margin-bottom: 8px;
+    font-size: 48px;
+}
+
+/* jsで追加したtodoに対する装飾 */
+.listArea {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--font);
+    text-decoration: none;
+}
+
+.listArea:first-child {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.listArea:last-child {
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+}
+
+.listArea.active {
+    z-index: 2;
+    color: var(--white);
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.listArea.disabled {
+    color: var(--gray);
+    pointer-events: none;
+    background-color: var(--white);
+}
+
+
+/* タスク完了用の装飾 */
+.contents.done .task,
+.contents.done .keyword .details {
+    text-decoration: line-through;
+    text-decoration-color: var(--font);
+    color: var(--gray);
+}
+
+/* フッター */
+footer {
+    background-color: var(--font);
+    color: var(--white);
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 8px;
+}
