@@ -11,6 +11,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
     <title>とどりすと</title>
 </head>
 
@@ -20,9 +21,6 @@
         <div class="filterArea">
             <div class="headerBox">
                 <h2>タスク</h2>
-                <p class="explanation">フィルターを選択すると絞り込みができます。<br>
-                    日付指定は両方を入力するとフィルターがかかります。<br>
-                    カテゴリは右クリックで削除できます。</p>
             </div>
             <div class="filterBox">
                 <ul class="priority">
@@ -33,14 +31,22 @@
                     <li class="element">🟢低</li>
                 </ul>
                 <div class="search">
-                    <input type="text" id="searchBox" placeholder="　タスクを検索...">
-                    <button id="searchClear">×</button>
+                    <div class="searchInner">
+                        <input type="text" id="searchBox" placeholder="　タスクを検索...">
+                        <button id="searchClear">×</button>
+                    </div>
                     <button id="searchButton">検索</button>
                 </div>
             </div>
         </div>
     </header>
 
+    <button id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div id="overlay"></div>
     <div class="palette">
         <aside class="sortArea">
             <h3>-リミット-</h3>
@@ -48,7 +54,7 @@
                 <li class="element">すべて</li>
                 <li class="element">今日</li>
                 <li class="element">日付指定
-                    <span class="inputLimit">
+                    <span class="sortLimit">
                         <input type="date" class="calendar">
                         <span class="tilde">～</span>
                         <input type="date" class="calendar">
@@ -73,9 +79,15 @@
         <!-- TODOの入力エリア -->
         <main>
             <section class="todoform">
+                <div class="explanation">
+                    <p>＜使い方＞<br>
+                        フィルターを選択すると絞り込みができます。<br>
+                        日付指定は両方を入力するとフィルターがかかります。<br>
+                        カテゴリは右クリックで削除できます。</p>
+                </div>
                 <div class="container">
                     <form id="inputArea">
-                        <input type="text" id="inputBox" placeholder="　新しいタスク（ヨーグルト）を追加..." autocomplete="off">
+                        <input type="text" id="inputBox" placeholder="　新しいタスクを追加..." autocomplete="off">
                     </form>
                     <div class="keyword">
                         <select name="selectPriority" id="selectP" class="choice">
@@ -85,7 +97,10 @@
                             <option value="low">🟢低</option>
                         </select>
 
-                        <label>期限：<input type="date" id="inputDue" class="choice"></label>
+                        <div class="addLimit">
+                            <label for="inputDue">期限：</label>
+                            <input type="date" id="inputDue" class="choice">
+                        </div>
 
                         <select name="selectCategory" id="selectC" class="choice">
                             <option value="notSelected">--カテゴリなし--</option>

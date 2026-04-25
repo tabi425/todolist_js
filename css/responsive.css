@@ -1,0 +1,179 @@
+@media only screen and (max-width:972px) {
+    header {
+        display: block;
+        position: relative;
+    }
+
+    h1 {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .filterArea {
+        display: block;
+    }
+
+    h2 {
+        font-size: 16px;
+        padding-bottom: 8px;
+    }
+
+    .headerBox {
+        justify-content: space-between;
+        padding: 8px 0;
+    }
+
+    #hamburger {
+        margin-right: 16px;
+    }
+
+    .filterBox {
+        display: block;
+        padding-bottom: 8px;
+    }
+
+    .priority {
+        justify-content: center;
+    }
+
+    .priority .element {
+        background-color: var(--deepPurple);
+        border-radius: 16px;
+    }
+
+    #hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        position: absolute;
+        top: 10%;
+        right: 2%;
+    }
+
+    #hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--font);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        transform-origin: center;
+    }
+
+    #hamburger.isOpen span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #hamburger.isOpen span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #hamburger.isOpen span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    #overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgb(108, 117, 125, 0.5);
+        z-index: 1;
+    }
+
+    #overlay.isOpen {
+        display: block;
+    }
+
+    .sortArea {
+        max-width: 100%;
+        display: block;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: -200px;
+        height: 100%;
+        overflow-y: auto;
+        width: 200px;
+        padding: 32px 16px;
+        background-color: var(--white);
+        transition: left 0.3s ease;
+    }
+
+    .sortArea.isOpen {
+        left: 0;
+        display: block;
+    }
+
+    .sortLimit {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tilde {
+        margin-left: 48px;
+    }
+
+    .search {
+        display: flex;
+        margin: 16px auto 8px;
+        justify-content: center;
+    }
+
+    #searchClear {
+        right: 8px;
+    }
+
+    #menuTarget.isOpen {
+        display: block;
+    }
+
+    .palette {
+        display: block;
+        position: relative;
+    }
+
+    .keyword {
+        display: block;
+    }
+
+    .addLimit label {
+        display: none;
+    }
+
+    .details {
+        display: block;
+    }
+
+    .editArea {
+        justify-content: space-around;
+    }
+
+    #addTodo {
+        display: block;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+
+
+    .contents .task,
+    .contents .keyword .details {
+        margin-bottom: 8px;
+    }
+
+    .contents.done .task,
+    .contents.done .keyword .details {
+        margin-bottom: 8px;
+    }
+
+
+    footer {
+        letter-spacing: 1px;
+    }
+}

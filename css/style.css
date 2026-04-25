@@ -9,6 +9,7 @@
     --gray: #6c757d;
 }
 
+
 /* 全体 */
 body {
     font-family: "Hachi Maru Pop", sans-serif;
@@ -16,6 +17,9 @@ body {
     font-size: 16px;
     color: var(--font);
     background-color: var(--purple);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ヘッダー */
@@ -28,7 +32,7 @@ h1 {
     padding: 16px 24px;
     color: var(--white);
     background-color: var(--pink);
-    width: 160px;
+    max-width: 160px;
     white-space: nowrap;
 }
 
@@ -52,14 +56,25 @@ h1 {
 }
 
 .explanation {
-    font-size: 12px;
-    margin-left: 8px;
+    margin: 16px auto 32px 16px;
+}
+
+.explanation p {
+    font-size: 16px;
 }
 
 .filterBox {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+
+/* ソートエリア */
+.priority {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .priority li {
@@ -74,13 +89,18 @@ h1 {
     border-radius: 16px;
 }
 
-/* ソートエリア */
 .search {
     margin: 0 16px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.searchInner {
     position: relative;
     display: inline-flex;
     align-items: center;
 }
+
 
 #searchBox {
     border: 1px solid var(--font);
@@ -93,7 +113,7 @@ h1 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 80px;
+    right: 8px;
     background: transparent;
     border: none;
     color: var(--font);
@@ -119,10 +139,8 @@ h1 {
     padding: 4px 8px;
 }
 
-
-.priority {
-    display: flex;
-    gap: 8px;
+#hamburger {
+    display: none;
 }
 
 h3 {
@@ -131,7 +149,7 @@ h3 {
 }
 
 .sortArea {
-    width: 160px;
+    max-width: 160px;
     margin: 0 auto;
     background-color: var(--white);
     padding: 8px 16px;
@@ -146,7 +164,7 @@ h3 {
     padding: 4px 0;
 }
 
-.inputLimit {
+.sortLimit {
     /* 直前の「日付指定」項目とカレンダーの間に余白を持たせるため */
     padding-top: 4px;
     display: block;
@@ -196,18 +214,45 @@ main {
     flex: 1;
 }
 
+#inputBox {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 8px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--font);
+    background-color: var(--purple);
+    border: 1px solid #e2d6dd;
+    appearance: none;
+    border-radius: 12px;
+}
+
+#inputBox:focus {
+    color: var(--font);
+    background-color: var(--white);
+    border-color: #F4A5A5;
+    outline: 0;
+    box-shadow: 0 0 0 4px #e2d6dd;
+}
+
 .keyword {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
 }
 
-.todoform,
-.contents {
+.todoform .container {
     background-color: var(--white);
-    max-width: 80%;
-    margin: 16px auto;
+    width: 80%;
+    margin: 16px auto 32px;
     padding: 16px 32px;
     border-radius: 16px;
+}
+
+.todoArea {
+    width: 80%;
+    margin: 16px auto;
 }
 
 #inputArea,
@@ -233,26 +278,8 @@ main {
     text-align: center;
 }
 
-#inputBox {
-    display: block;
-    width: 100%;
-    margin-bottom: 16px;
-    padding: 8px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--font);
-    background-color: var(--purple);
-    border: 1px solid #e2d6dd;
-    appearance: none;
-    border-radius: 12px;
-}
-
-#inputBox:focus {
-    color: var(--font);
-    background-color: var(--white);
-    border-color: #F4A5A5;
-    outline: 0;
-    box-shadow: 0 0 0 4px #e2d6dd;
+#inputTag {
+    max-width: 240px;
 }
 
 .button {
@@ -276,14 +303,18 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: var(--white);
+    padding: 16px 32px;
+    border-radius: 16px;
+    margin: 8px 0;
 }
 
 .details {
+    display: flex;
+    align-items: center;
     border: none;
     font-size: 12px;
     line-height: 1.2;
-    display: flex;
-    align-items: center;
 }
 
 .editArea {
@@ -307,7 +338,6 @@ main {
 .listArea {
     position: relative;
     display: block;
-    padding: 0.5rem 1rem;
     color: var(--font);
     text-decoration: none;
 }
@@ -346,6 +376,7 @@ main {
 
 /* フッター */
 footer {
+    margin-top: auto;
     background-color: var(--font);
     color: var(--white);
     letter-spacing: 2px;
