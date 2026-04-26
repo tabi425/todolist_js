@@ -24,7 +24,6 @@
     }
 
     #hamburger {
-        margin-top: -10px;
         margin-right: 16px;
     }
 
@@ -128,12 +127,7 @@
     }
 
     .searchInner {
-        width: 80%;
         justify-content: center;
-    }
-
-    #searchClear {
-        right: 40px;
     }
 
     #menuTarget.isOpen {
