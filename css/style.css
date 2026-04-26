@@ -59,10 +59,6 @@ h1 {
     margin: 16px auto 32px 16px;
 }
 
-.explanation p {
-    font-size: 16px;
-}
-
 .filterBox {
     display: flex;
     justify-content: space-between;
@@ -382,4 +378,11 @@ footer {
     letter-spacing: 2px;
     text-align: center;
     padding: 8px;
+}
+
+
+/* iOSで年月日を表示させる */
+input[type="date"] {
+    -webkit-appearance: textfield;
+    appearance: textfield;
 }

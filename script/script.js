@@ -21,13 +21,6 @@ function reApplyFilter() {
     if (currentFilter.type === 'category') filterCategory(currentFilter.selected);
 }
 
-
-//4/24次にやること
-//・レスポンシブ対応
-//・編集モーダルの実装（先にポートフォリオ公開してからの「今後の課題」
-
-
-
 // ｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰソート機能ｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰ
 // ｰｰｰｰｰｰｰｰｰｰｰｰｰフリーワード検索ｰｰｰｰｰｰｰｰｰｰｰｰｰ
 const searchBox = document.getElementById('searchBox');
@@ -363,12 +356,6 @@ function add(todo) {
         const editArea = document.createElement('div');
         editArea.classList.add('editArea');
 
-        // 編集ボタン
-        // const todoEdit = document.createElement('button');
-        // todoEdit.classList.add('todoEdit', 'button');
-        // todoEdit.innerText = '編集';
-        // editArea.appendChild(todoEdit);
-
         // 削除ボタン
         const todoDelete = document.createElement('button');
         todoDelete.classList.add('todoDelete', 'button');
@@ -464,6 +451,3 @@ overlay.addEventListener('click', function () {
     overlay.classList.remove('isOpen');
     document.getElementById('hamburger').classList.remove('isOpen');
 });
-
-
-// レスポンシブメニュー時、日付～日付の「～」の位置がおかしい
